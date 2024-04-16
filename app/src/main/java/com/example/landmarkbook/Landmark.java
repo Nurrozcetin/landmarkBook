@@ -1,6 +1,10 @@
 package com.example.landmarkbook;
 
-public class Landmark {
+import java.io.Serializable;
+
+public class Landmark implements Serializable {
+    //serilestirilebilir sinif: veriyi bir yerden diger bi yre yollarken bunu veriye cevirip diger yerde tekrar kendisine donusturmek
+
     String name;
     String country;
     int image;

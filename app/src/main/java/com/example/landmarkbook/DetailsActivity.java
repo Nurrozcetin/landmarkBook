@@ -1,5 +1,6 @@
 package com.example.landmarkbook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.view.View;
@@ -22,6 +23,12 @@ public class DetailsActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
+        Intent intent = getIntent();
+        //Landmark selected = (Landmark) intent.getSerializableExtra("landmark"); //casting dogru yapilmazsa app coker ayrica () icindeki degerden eminim cevir diyoruz
+        Singleton singleton = Singleton.getInstance();
+        Landmark selected = singleton.getSentLandmark();
+        binding.txtName.setText(selected.name);
+        binding.txtCountry.setText(selected.country);
+        binding.imgDetails.setImageResource(selected.image);
     }
 }
